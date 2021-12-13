@@ -74,7 +74,6 @@ python-dateutil
 pytz==2021.3
 pyzmq
 requests==2.26.0
-rpy2==3.4.5
 scikit-learn==1.0
 scikit-surprise==1.1.1
 scipy
