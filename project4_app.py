@@ -527,8 +527,8 @@ app.layout = html.Div([
             dcc.Tabs(id='system_tabs', children=[
                 dcc.Tab(label='Recommendation System 1', children = system_1, style={'font-weight': 'bold'}),
                 dcc.Tab(label='Recommendation System 2', children = [system_2_topic, rating_section, result_display_section], style={'font-weight': 'bold'}),
-            ], style=CONTENT_STYLE),
-        ]),
+            ]),
+        ], style=CONTENT_STYLE),
     sidebar,
     ])
 
