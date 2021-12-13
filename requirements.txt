@@ -40,5 +40,5 @@ scikit-learn==1.0
 scikit-surprise==1.1.1
 scipy
 seaborn
-pickle
+pickleshare
 collections
