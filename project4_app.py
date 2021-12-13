@@ -57,6 +57,7 @@ with open(filename, 'rb') as f:
 ##########
 external_stylesheets = [dbc.themes.YETI]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
 df = px.data.stocks() 
 
 colors = {
@@ -531,6 +532,6 @@ app.layout = html.Div([
 ########################################################################
 # Main
 if __name__ == '__main__': 
-    app.run_server(port=8000, host='127.0.0.1')
-
+    # app.run_server(port=8000, host='127.0.0.1')
+    app.run()
 # %%
