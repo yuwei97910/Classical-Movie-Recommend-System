@@ -41,4 +41,3 @@ scikit-surprise==1.1.1
 scipy
 seaborn
 pickleshare
-collections
