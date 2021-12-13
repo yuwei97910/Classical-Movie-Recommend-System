@@ -1,11 +1,16 @@
+########################################################################
+# STAT 542: Project 4
+# Movies Recommendation System
 
-#%%
+### YuWei Lai
+### 2021.12.12
+########################################################################
+
 #%%
 from os import system
 import pandas as pd
 import numpy as np
 import pickle
-from typing import Text
 
 import dash
 import dash_table
@@ -20,7 +25,6 @@ import plotly.graph_objects as go
 import flask
 
 ########################################################################
-#########
 # Use Surprise for recommendation
 from surprise import KNNBasic
 from surprise import SVD
@@ -42,9 +46,9 @@ movies_system_1 = pd.read_csv('movies_system_1.csv')
 movies_system_1['Image'] = [image_url + str(x) + '.jpg?raw=true' for x in movies_system_1['MovieID']]
 
 # load the pickled models
-filename = 'model_knn.pk'
-with open(filename, 'rb') as f:
-    model_knn = pickle.load(f)
+# filename = 'model_knn.pk'
+# with open(filename, 'rb') as f:
+#     model_knn = pickle.load(f)
 
 filename = 'model_svd.pk'
 with open(filename, 'rb') as f:
