@@ -447,7 +447,7 @@ def serve_image(image_path):
 ########################################################################
 system_1 = html.Div(id = 'system_1', children = [
     
-    html.H2(children='The Recommendation System 1:  Classics and New Trends', style={
+    html.H2(children='The Recommender System 1:  Classics and New Trends', style={
         'textAlign': 'left',
         'font-weight': 'bold',
         'color': colors['h2'],
@@ -488,15 +488,15 @@ system_1 = html.Div(id = 'system_1', children = [
 
 # -----------
 system_2_topic = html.Div(id='syste_2_topic',children=[
-        html.H2('The Recommendation System 2: User based Recommendation', style={
+        html.H2('The Recommender System 2: User based Recommendations', style={
         'textAlign': 'left',
         'font-weight': 'bold',
         'color': colors['h2']}),
     ], style=CONTENT_STYLE)
 rating_section = html.Div(id='rating_section', children=initiate_rating_section(), style=CONTENT_STYLE)
 result_display_section = html.Div(id='result_display_section', children=[
-        html.H3(id='present_title', children='Step 2: Get your recommendation', style=H3_BOLD_STYLE),
-        html.Button('Get my recommendation!', id='get_recommend', n_clicks=0, style=IMORTANT_BUTTON_STYLE),
+        html.H3(id='present_title', children='Step 2: Get your recommendations', style=H3_BOLD_STYLE),
+        html.Button('Get recommendations!', id='get_recommend', n_clicks=0, style=IMORTANT_BUTTON_STYLE),
         html.Div(id='result_display', children=''),
     ], style=CONTENT_STYLE)
 
@@ -516,14 +516,14 @@ sidebar = html.Div([
         ),
         html.H6("Created by Yu-Wei Lai", style = {'font-weight': 'bold'}),
         html.H4("Description", style = {'font-weight': 'bold', 'marginTop':20, 'marginBottom':20}),
-        html.P('There are two recommendation system in the app. The first system will recommend movies based on the genre you selected. The system two is based on the movies you rated. Therefore, when using system two, you need to rate several movies which are randomly generated.'),
+        html.P('There are two recommender systems in the app. The first system will recommend movies based on the genre you selected. The system two is based on the movies you rated. Therefore, when using system two, you need to rate several movies which are randomly generated.'),
         html.H4("Instruction", style = {'font-weight': 'bold', 'marginTop':20, 'marginBottom':20}),
     ],style=SIDEBAR_STYLE)
 # -----------
 app.layout = html.Div([
     dcc.Location(id="url"), 
     html.Div(id='main_content', children=[
-            html.H1(id = 's1_h1', children = 'Recommendation System', style = {'textAlign':'center','font-weight': 'bold', 'marginTop':20, 'marginBottom':20, 'block-size': '2em', 'background-color':'#6A8EB7', 'color':'#F0EDEC', 'padding': '10px 0'}),
+            html.H1(id = 's1_h1', children = 'Movies Recommender System', style = {'textAlign':'center','font-weight': 'bold', 'marginTop':20, 'marginBottom':20, 'block-size': '2em', 'background-color':'#6A8EB7', 'color':'#F0EDEC', 'padding': '10px 0'}),
             dcc.Tabs(id='system_tabs', children=[
                 dcc.Tab(label='Recommendation System 1', children = system_1, style={'font-weight': 'bold'}),
                 dcc.Tab(label='Recommendation System 2', children = [system_2_topic, rating_section, result_display_section], style={'font-weight': 'bold'}),
@@ -536,5 +536,7 @@ app.layout = html.Div([
 # Main
 if __name__ == '__main__': 
     # app.run_server(port=8000, host='127.0.0.1')
+
+    ### For deploy
     app.run_server(debug=True)
 # %%
