@@ -2,7 +2,7 @@ appnope
 argon2-cffi
 async-generator 
 attrs 
-backcall==0.2.1
+backcall
 bleach 
 Brotli==1.0.9
 certifi==2021.10.8
