@@ -505,7 +505,6 @@ result_display_section = html.Div(id='result_display_section', children=[
 # -----------
 sidebar = html.Div([
         html.H2("Movies Recommender System", className="sidebar"),
-        html.Hr(),
         html.H4("STAT542: Project 4, Fall 2021"),
         dbc.Nav([
                 # html.Div(id="multitab_layout", children=multitab_layout),
@@ -516,10 +515,17 @@ sidebar = html.Div([
             vertical=True,
             pills=True,
         ),
+        html.Hr(),
         html.H6("Created by Yu-Wei Lai", style = {'font-weight': 'bold'}),
-        html.H4("Description", style = {'font-weight': 'bold', 'marginTop':20, 'marginBottom':20}),
-        html.P('There are two recommender systems in the app. The first system will recommend movies based on the genre you selected. The system two is based on the movies you rated. Therefore, when using system two, you need to rate several movies which are randomly generated.'),
+        html.A(html.Button('Source Code on My GitHub', style=IMORTANT_BUTTON_STYLE), href='https://github.com/yuwei97910/MovieRecommendSystem'),
+        # html.H4("Description", style = {'font-weight': 'bold', 'marginTop':20, 'marginBottom':20}),
+        # html.P('There are two recommender systems in the app. The first system will recommend movies based on the genre you selected. The system two is based on the movies you rated. Therefore, when using system two, you need to rate several movies which are randomly generated.'),
         html.H4("Instruction", style = {'font-weight': 'bold', 'marginTop':20, 'marginBottom':20}),
+        # html.H5('Select the system on the top:'),
+        html.H6('System 1:', style={'font-weight': 'bold'}),
+        html.Small('Select your favorite genre, and you will get your recommendations.'),
+        html.H6('System 2:', style={'font-weight': 'bold', 'marginTop':20}),
+        html.Small('a. Rate as more movies as possible. If you love the movie, rate it five! If you have no preference for the presented movies, just skip by clicking "Skip these movies". After you rating a movie, another option will appear!\n\nb. Click the button "Get recommendations" and enjoy your movies!'),
     ],style=SIDEBAR_STYLE)
 # -----------
 app.layout = html.Div([
@@ -530,6 +536,10 @@ app.layout = html.Div([
                 dcc.Tab(label='Recommendation System 1', children = system_1, style={'font-weight': 'bold'}),
                 dcc.Tab(label='Recommendation System 2', children = [system_2_topic, rating_section, result_display_section], style={'font-weight': 'bold'}),
             ], style=CONTENT_STYLE),
+            html.Hr(style={"margin-left": "16rem", 'marginTop':50}),
+            # html.H6("Technical Details", style = {'font-weight': 'bold', 'marginTop':40, 'marginBottom':5, "margin-left": "18rem"}),
+            # html.Small("This app is built by Python with Dash. The model of system two is built by Python with Surprise. The algorithms realized by Singular Value Decomposition Methods.", style={"margin-left": "18rem"}),
+            # html.Small("The algorithms realized by Singular Value Decomposition Methods.", style={"margin-left": "18rem"}),
         ]),
     sidebar,
     ])
