@@ -4,6 +4,8 @@
 
 ### YuWei Lai
 ### 2021.12.12
+
+### App deployed on herokuapp: https://stat542-project4-recommend-sys.herokuapp.com
 ########################################################################
 
 #%%
@@ -502,7 +504,7 @@ result_display_section = html.Div(id='result_display_section', children=[
 
 # -----------
 sidebar = html.Div([
-        html.H2("Movies Recommend System", className="sidebar"),
+        html.H2("Movies Recommender System", className="sidebar"),
         html.Hr(),
         html.H4("STAT542: Project 4, Fall 2021"),
         dbc.Nav([
@@ -523,7 +525,7 @@ sidebar = html.Div([
 app.layout = html.Div([
     dcc.Location(id="url"), 
     html.Div(id='main_content', children=[
-            html.H1(id = 's1_h1', children = 'Movies Recommender System', style = {'textAlign':'center','font-weight': 'bold', 'marginTop':20, 'marginBottom':20, 'block-size': '2em', 'background-color':'#6A8EB7', 'color':'#F0EDEC', 'padding': '10px 0', "margin-left": "4rem"}),
+            html.H1(id = 's1_h1', children = 'Classic Movies Recommender System', style = {'textAlign':'center','font-weight': 'bold', 'marginTop':20, 'marginBottom':20, 'block-size': '2em', 'background-color':'#6A8EB7', 'color':'#F0EDEC', 'padding': '10px 0', "margin-left": "16rem"}),
             dcc.Tabs(id='system_tabs', children=[
                 dcc.Tab(label='Recommendation System 1', children = system_1, style={'font-weight': 'bold'}),
                 dcc.Tab(label='Recommendation System 2', children = [system_2_topic, rating_section, result_display_section], style={'font-weight': 'bold'}),
@@ -535,8 +537,7 @@ app.layout = html.Div([
 ########################################################################
 # Main
 if __name__ == '__main__': 
-    app.run_server(port=8000, host='127.0.0.1')
+    # app.run_server(port=8000, host='127.0.0.1')
 
     ### For deploy
-    # app.run_server(debug=True)
-# %%
+    app.run_server(debug=True)
