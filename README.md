@@ -4,6 +4,8 @@ https://stat542-project4-recommend-sys.herokuapp.com
 
 - For the model building process, please refer to the notebook: project4_summary
 ----
+## Introduction
+
 The user-based recommendation models are created by the package: Surprise, and the web app of the two systems is created by the package: Dash.
 The testing area of these models is on MacBook Air(2021) with M1 chip, 8 cores CPU, 3.2 GHz, with 8 GB RAMs
 The app was deployed with Github and hosted on Heroku Server.
