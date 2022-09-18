@@ -47,6 +47,7 @@ Followed the EDA of the dataset by Prof.Liang, the rating count will have huge i
 ### Method 1: K-Nearest Neighbors
 I first use the train-test set we created to fit a single model.
 The model I used is the KNNBasic() model from Surprise. The algorithm aimed to optimized:
+
 $$
 \hat{r}_{ui} = \frac{\sum\limits_{v \in N^k_i(u)} \text{sim}(u, v) \cdot r_{vi}}{\sum\limits_{v \in N^k_i(u)} \text{sim}(u, v)}
 $$
@@ -59,9 +60,11 @@ $$
      * which is more reasonable to use on this system, since we can know the new users' rating preference when we make recommendations for them. Also, we had only the records of rating that could be used for measurement.
  - The algorithms measured similarities/distance by Mean Squared Difference (MSD) similarity: it only takes common users into consideration.
      * It compared the user distance on features, which is measured as:
+     
  $$
  \text{msd}(u, v) = \frac{1}{|I_{uv}|} \cdot\sum\limits_{i \in I_{uv}} (r_{ui} - r_{vi})^2
  $$
+ 
 (Surprise' Documentation 2021)
 
 ##### Result of the single model:
@@ -71,11 +74,15 @@ The Rooted Mean Square Error (RMSE) for the testing set is 0.9272
 -----
 ### Method 2: Singular Value Decomposotion
 I first use the train-test set we created to fit a single model.
+
 The model I used is the SVD() model from Surprise. In the algorithms, the predictor is:
+
 $$
 \hat{r}_{ui} = \mu + b_u + b_i + q_i^Tp_u; \hat{r}_{ui} = q_i^Tp_u
 $$
+
 The algorithm aimed to minimize:
+
 $$
 \sum_{r_{ui} \in R_{train}} \left(r_{ui} - \hat{r}_{ui} \right)^2 +\lambda\left(b_i^2 + b_u^2 + ||q_i||^2 + ||p_u||^2\right)
 $$
